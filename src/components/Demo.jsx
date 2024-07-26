@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { copy, linkIcon, loader, tick, submitLogo } from "../assets";
 import { useLazyGetSummaryQuery } from "../services/article";
 
@@ -55,6 +54,14 @@ const Demo = () => {
       </div>
 
       {/* Display Results */}
+      {isFetching && <p>Loading...</p>}
+      {error && <p>Error fetching summary.</p>}
+      {article.summary && (
+        <div className="mt-4">
+          <h2 className="text-xl font-bold">Summary:</h2>
+          <p>{article.summary}</p>
+        </div>
+      )}
     </section>
   );
 };

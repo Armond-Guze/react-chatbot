@@ -9,6 +9,8 @@ export const articleApi = createApi({
         prepareHeaders: (headers) => {
             headers.set('X-RapidAPI-Key', rapidApiKey);
             headers.set('X-RapidAPI-Host', 'article-extractor-and-summarizer.p.rapidapi.com');
+            console.log('RapidAPI Key:', import.meta.env.VITE_RAPID_API_ARTICLE_KEY);
+
 
             return headers;
         },
